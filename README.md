@@ -24,31 +24,22 @@ Es fundamental contar con estos requisitos para poder correr el proyecto:
 
 1. Ingresa al repositorio:
    ```
-   cd docker_project
+   cd inventario_web_django
     ```
 2. Ejecuta los comandos en una terminal
     ```
-    docker-compose build 
+    docker-compose up --build 
     ```
-3. Realiza las migraciones correspondientes
-    ```
-    docker-compose run web python manage.py migrate
-    ```
-4. Puedes crear un super usuario (Opcional), en caso de que quieras manipular los datos desde el admin de Django
+3. Puedes crear un super usuario (Opcional), en caso de que quieras manipular los datos desde el admin de Django
     ```
     docker-compose run web python manage.py createsuperuser
     ```
-6. Finalmente, correremos el proyecto en el puerto 8000
-    ```
-    docker-compose up 
-    ```
-6. Accede al localhost
-
+4. Accede al localhost
     ```
     http://127.0.0.1:8000/
     ```
 
-7. En caso de tener problemas de permisos, ejecuta los siguientes comandos y luego vuelve a ejecutar los anteriores
+5. En caso de tener problemas de permisos, ejecuta los siguientes comandos y luego vuelve a ejecutar los anteriores
 
     ```
     sudo usermod -aG docker $USER
