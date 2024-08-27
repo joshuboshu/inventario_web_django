@@ -26,20 +26,31 @@ Es fundamental contar con estos requisitos para poder correr el proyecto:
    ```
    cd inventario_web_django
     ```
-2. Ejecuta los comandos en una terminal
+2. En la carpeta env_files, crea un archivo .env con las variables que hay en .env-example y reemplazalas por tus variables de entorno, ejemplo:
+    ```
+    SECRET_KEY=tu_secret_key
+    DJANGO_DEBUG=True
+    ALLOWED_HOSTS=127.0.0.1,localhost,0.0.0.0
+    POSTGRES_DB=tu_base_de_datos
+    POSTGRES_USER=_tu_usuario
+    POSTGRES_PASSWORD=tu_password
+    POSTGRES_HOST=psql
+    POSTGRES_PORT=5432
+    ```
+3. Ejecuta los comandos en una terminal
     ```
     docker-compose up --build 
     ```
-3. Puedes crear un super usuario (Opcional), en caso de que quieras manipular los datos desde el admin de Django
+4. Puedes crear un super usuario (Opcional), en caso de que quieras manipular los datos desde el admin de Django
     ```
     docker-compose run web python manage.py createsuperuser
     ```
-4. Accede al localhost
+5. Accede al localhost
     ```
     http://127.0.0.1:8000/
     ```
 
-5. En caso de tener problemas de permisos, ejecuta los siguientes comandos y luego vuelve a ejecutar los anteriores
+6. En caso de tener problemas de permisos, ejecuta los siguientes comandos y luego vuelve a ejecutar los anteriores
 
     ```
     sudo usermod -aG docker $USER
