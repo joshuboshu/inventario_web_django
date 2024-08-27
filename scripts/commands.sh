@@ -9,6 +9,10 @@ done
 
 echo "✅ Postgres Database Started Successfully ($POSTGRES_HOST:$POSTGRES_PORT)"
 
+# Ajustar permisos en los directorios estáticos y de medios
+chmod -R 755 /data/web/static /data/web/media
+
+# Recolectar archivos estáticos, hacer migraciones e iniciar el servidor
 python manage.py collectstatic --noinput
 python manage.py makemigrations --noinput
 python manage.py migrate --noinput
