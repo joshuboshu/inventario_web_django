@@ -51,7 +51,12 @@ Es fundamental contar con estos requisitos para poder correr el proyecto:
     ```
 
 6. En caso de tener problemas de permisos, ejecuta los siguientes comandos y luego vuelve a ejecutar los anteriores
+    ```
+    sudo chown -R $(whoami):$(whoami) ./data/web/static ./data/web/media
+    sudo chmod -R 755 ./data/web/static ./data/web/media
 
+    ```
+    o
     ```
     sudo usermod -aG docker $USER
     ```
